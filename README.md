@@ -1,7 +1,5 @@
 # React Setup
 
-##yarn
-
 ### Step 1 install
 
 ```sh
