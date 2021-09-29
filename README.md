@@ -14,7 +14,7 @@ yarn upgrade -R eslint
 
 ### .vscode setting.json
 
-```
+```json
 {
   "workbench.colorCustomizations": {
     "activityBar.background": "#fd9347",
@@ -25,7 +25,14 @@ yarn upgrade -R eslint
     "javascript": "javascriptreact"
   }
 }
+```
 
+### optional (change class setting)
+
+```json
+ "[javascript]": {
+    "editor.formatOnSave": true
+  }
 ```
 
 ### .prettierrc
@@ -59,5 +66,4 @@ src/serviceWorker.js
     "react-hooks/exhaustive-deps": "warn"
   }
 }
-
 ```
