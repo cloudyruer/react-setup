@@ -72,18 +72,18 @@ src/serviceWorker.js
 
 #### HTML
 
-`class=` 取代為 `className=`
-`<img` 取代為 `<img alt=""`
-`href="#"` 取代為 `href="#/"`
-`style=""` 取代為 `style={{}}`
+1. `class=` 取代為 `className=`
+1. `<img` 取代為 `<img alt=""`
+1. `href="#"` 取代為 `href="#/"`
+1. `style=""` 取代為 `style={{}}`
 
 #### CSS
 
-`body` 取代為 `#root`
+1. `body` 取代為 `#root`
 
 #### 物件 or 陣列
 
-```
+```javascript
 setCount={(newCount) => {
       //1. 先從原本的陣列拷貝出一個新陣列(在這上面處理)
       const newProductsInOrder = [...productsInOrder]
