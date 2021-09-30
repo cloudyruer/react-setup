@@ -67,3 +67,32 @@ src/serviceWorker.js
   }
 }
 ```
+
+### JSX
+
+#### HTML
+
+`class=` 取代為 `className=`
+`<img` 取代為 `<img alt=""`
+`href="#"` 取代為 `href="#/"`
+`style=""` 取代為 `style={{}}`
+
+#### CSS
+
+`body` 取代為 `#root`
+
+#### 物件 or 陣列
+
+```
+setCount={(newCount) => {
+      //1. 先從原本的陣列拷貝出一個新陣列(在這上面處理)
+      const newProductsInOrder = [...productsInOrder]
+
+      //2. 運算處理：更新陣列中對應商品數量
+      // 更新陣列中本商品索引值，如果小於1以1來更新
+      newProductsInOrder[i].count = newCount < 1 ? 1 : newCount
+
+      //3. 設定回原本的狀態
+      setProductsInOrder(newProductsInOrder)
+    }}
+```
