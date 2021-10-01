@@ -1,6 +1,8 @@
 ### 文字輸入框
 
-`const [inputText, setInputText] = useState('')`
+```javascript
+const [inputText, setInputText] = useState('')
+```
 
 ```JSX
 <section id="inputText">
@@ -17,7 +19,9 @@
 
 ### 文字區域
 
-`const [textArea, setTextArea] = useState('')`
+```javascript
+const [textArea, setTextArea] = useState('')
+```
 
 ```JSX
 <section id="textArea">
@@ -36,7 +40,9 @@
 
 ### 下拉選單
 
-`const [selectedOption, setSelectedOption] = useState('')`
+```javascript
+const [selectedOption, setSelectedOption] = useState('')
+```
 
 ```JSX
 <section id="selectedOption">
@@ -60,7 +66,9 @@
 
 ### 選項按鈕 (未使用專用元件)
 
-` const [gender, setGender] = useState('')`
+```javascript
+const [gender, setGender] = useState('')
+```
 
 ```JSX
 <section id="radioGroup">
@@ -103,11 +111,7 @@
 
 ### 選項按鈕 (使用專用元件)
 
-```javascript
-import RadioButton from './components/RadioButton'
-const [gender2, setGender2] = useState('不提供')
-const genderOptions = ['男', '女', '未定', '不提供']
-```
+####專用元件
 
 ```JSX
 import React from 'react'
@@ -134,6 +138,14 @@ function RadioButton(props) {
 
 export default RadioButton
 
+```
+
+####主檔案
+
+```javascript
+import RadioButton from './components/RadioButton'
+const [gender2, setGender2] = useState('不提供')
+const genderOptions = ['男', '女', '未定', '不提供']
 ```
 
 ```JSX
