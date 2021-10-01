@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import RadioButton from './components1001/RadioButton'
+import CheckBox from './components1001/CheckBox'
 
 function App(props) {
   const [inputText, setInputText] = useState('')
@@ -15,6 +16,10 @@ function App(props) {
 
   //   checkbox - group
   const [likeList, setLikeList] = useState(['芒果'])
+
+  // checkbox - group - 專用元件
+  const [likeList2, setLikeList2] = useState([])
+  const fruitOptions = ['芒果', '西瓜', '芭樂']
 
   return (
     <>
@@ -167,6 +172,20 @@ function App(props) {
           }}
         />
         <label htmlFor="">西瓜</label>
+      </section>
+
+      {/* 多個核取方塊(專用元件) */}
+      <section id="checkboxGroup2">
+        {fruitOptions.map((v, i) => {
+          return (
+            <CheckBox
+              key={i}
+              value={v}
+              checkedValueList={likeList2}
+              setCheckedValueList={setLikeList2}
+            />
+          )
+        })}
       </section>
     </>
   )
