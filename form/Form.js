@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import RadioButton from './components/RadioButton'
+import RadioButton from './components1001/RadioButton'
 
 function App(props) {
   const [inputText, setInputText] = useState('')
@@ -10,6 +10,11 @@ function App(props) {
   //radio - 專用元件
   const [gender2, setGender2] = useState('不提供')
   const genderOptions = ['男', '女', '未定', '不提供']
+  //   checkbox - single
+  const [agree, setAgree] = useState(false)
+
+  //   checkbox - group
+  const [likeList, setLikeList] = useState(['芒果'])
 
   return (
     <>
@@ -111,6 +116,57 @@ function App(props) {
             />
           )
         })}
+      </section>
+
+      {/* checkbox */}
+      <section id="checkboxSingle">
+        <h2>單一核取方塊</h2>
+        <input
+          id="singleCheck"
+          type="checkbox"
+          checked={agree}
+          onChange={(e) => {
+            setAgree(e.target.checked)
+          }}
+        />
+        <label htmlFor="singleCheck">我同意網站註冊規定</label>
+      </section>
+
+      {/* 多個核取方塊 */}
+      <section id="checkboxGroup">
+        <h2>多個核取方塊</h2>
+        <input
+          type="checkbox"
+          value="芒果"
+          checked={likeList.includes('芒果')}
+          onChange={(e) => {
+            // toggle
+            // 如果這選項在陣列中 -> 移出去
+            if (likeList.includes(e.target.value)) {
+              // 1. 拷貝新陣列
+              // 2. 在新陣列中做修改
+              const newLikeList = likeList.filter((v) => v !== e.target.value)
+              return setLikeList(newLikeList)
+            }
+            // 如果這選項不在陣列中 -> 加入陣列
+            setLikeList([...likeList, e.target.value])
+          }}
+        />
+        <label htmlFor="">芒果</label>
+
+        <input
+          type="checkbox"
+          value="西瓜"
+          checked={likeList.includes('西瓜')}
+          onChange={(e) => {
+            if (likeList.includes(e.target.value)) {
+              const newLikeList = likeList.filter((v) => v !== e.target.value)
+              return setLikeList(newLikeList)
+            }
+            setLikeList([...likeList, e.target.value])
+          }}
+        />
+        <label htmlFor="">西瓜</label>
       </section>
     </>
   )
