@@ -12,7 +12,7 @@ yarn add eslint-plugin-prettier prettier eslint-config-react-app eslint-plugin-i
 yarn upgrade -R eslint
 ```
 
-### .vscode setting.json
+### .vscode settings.json
 
 ```json
 {
